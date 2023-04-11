@@ -49,11 +49,11 @@ public class CardDeliveryTest {
 
     @Test
     void shouldCheckNameEmpty() {
-        $x("//input [@placeholder='Город']").val("Лондон");
+        $x("//input [@placeholder='Город']").val("Краснодар");
         $x("//input[@type='tel']").doubleClick().sendKeys(Keys.BACK_SPACE);
         String meetingDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         $x("//input[@placeholder='Дата встречи']").val(meetingDate);
-        $("[data-test-id='name'] input").val("");
+        $("[data-test-id='name'] input").val(" ");
         $("[data-test-id='phone'] input").val("+79213332244");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
